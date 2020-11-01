@@ -1,0 +1,6 @@
+node_modules
+public/posts
+views/post_content
+**/*.swp
+public/assets
+**/*.log
