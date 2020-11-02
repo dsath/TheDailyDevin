@@ -11,13 +11,14 @@
     line-height: 50px;
 }
 
-.post-content {
-    background-color: #99ccff;
-    margin: 35px 50% 0px 10px;
-    padding: 10px;
+.post-list div:hover {
+    background-color: #ddd;
 }
 
-.post-content p {
+.post-content {
+    background-color: #99ccff;
+    margin: 10px 50% 0px 10px;
+    padding: 1px 10px 1px 10px;
 }
 
 .post-title {
@@ -28,6 +29,11 @@
     padding-bottom: 2px;
 }
 
+.about-content {
+    background-color: #99ccff;
+    margin: 20px 50% 0px 10px;
+    padding: 1px 10px 1px 10px;
+}
 
 .header {
     overflow: hidden;

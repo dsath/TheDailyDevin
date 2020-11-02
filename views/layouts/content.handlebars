@@ -14,7 +14,19 @@
       </div>
     </div>
 
+    {{#with this}}
+    <div class="post-title">
+        <b>
+            Title: {{title}}
+            <br>
+            Date Posted: {{date}}
+        </b>
+    </div>
+    {{/with}}
+
+    <div class="post-content">
     {{{body}}}
+    </div>
 
   </body>
 </html>
