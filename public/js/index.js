@@ -1,4 +1,4 @@
-var myurl = "http://71.80.152.97:8080"
+var myurl = "http://10.0.0.5:8080"
 
 function showPost(id) {
     window.location.href = myurl + "/posts/" + id;
