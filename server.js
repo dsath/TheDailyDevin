@@ -7,8 +7,8 @@ var mariadb = require('mariadb/callback');
 var app = express();
 var fileUpload = require('express-fileupload');
 var showdown = require('showdown'), converter = new showdown.Converter();
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars')
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 var db = require('./database/db');
 
 
@@ -27,14 +27,13 @@ con.query('SELECT * FROM blog_posts', function(err, rows, fields) {
 });
 
 app.use(express.static('public'));
+app.use('/bootstrap/css', express.static('node_modules/bootstrap/dist/css'));
+app.use('/bootstrap/js', express.static('node_modules/bootstrap/dist/js'));
 app.use(fileUpload());
 
 
 app.get('/', (req, res) => {
-  con.query('SELECT * FROM blog_posts', function(err, rows, fields) {
-    if (err) throw err;
-    res.render('home', rows);
-  });
+  res.render('home');
 });
 
 app.get('/posts', (req, res) => {
@@ -43,6 +42,13 @@ app.get('/posts', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about');
+});
+
+app.get('/blog', (req, res) => {
+  con.query('SELECT * FROM blog_posts', function(err, rows, fields) {
+    if (err) throw err;
+    res.render('blog', rows);
+  });
 });
 
 app.get('/posts/:id', (req, res) => {

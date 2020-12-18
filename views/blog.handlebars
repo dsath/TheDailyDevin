@@ -1,0 +1,17 @@
+<div class="container" style="margin-top: 1rem;">
+<div class="row gy-3">
+{{#each .}}
+  {{#if id}}
+    <button 
+      class="btn btn-secondary" 
+      type="button"
+      {{!-- onclick="location.href='http://10.0.0.5:8080/posts/{{id}}'"> --}}
+      onclick="location.href='posts/{{id}}'">
+      {{title}}
+    </button>
+  {{/if}}
+{{/each}}
+</div>
+</div>
+<div class="bgspan backdrop"></div>
+<img class="bgspan" src="assets/workspace_background.jpg">

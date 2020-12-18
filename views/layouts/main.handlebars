@@ -1,21 +1,101 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF=8">
+    <meta charset="UTF=8"><meta name='viewport' content='width=device-width initial-scale=1'>
     <title>The Daily Devin</title>
-    <link rel="stylesheet" href="/css/styles.css">
+
+      <style>
+        .post-box {
+          padding: 1rem;
+          text-align: center;
+          background-color: #9c8a89;
+        }
+
+        /* background image */
+        .bgspan {
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1024px;
+
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: -2;
+        }
+
+        /* text backdrop */
+        .backdrop {
+          background-color: #ebdddd;
+          width: 80%;
+          left: 10%;
+          z-index: -1;
+        }
+
+
+        /* font */
+        h1 { color: #d04764; font-family: 'Lobster', cursive; font-size: 36px; font-weight: normal; line-height: 48px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+        h2 { color: #2CA4B0; font-family: 'Oleo Script', cursive; font-size: 24px; font-weight: normal; line-height: 32px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+        p { color: #333; font-family: 'Original Surfer', cursive; font-size: 16px; line-height: 28px; margin: 0 0 24px; }
+        /* font */
+      </style>
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"> 
   </head>
+
   <body>
-    <div class="header">
-      <a class="logo" href="/">The Daily Devin</a>
-      <div class="header-right">
-        <a href="/">HOME</a>
-        <a href="/about">About</a>
-      </div>
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/">The Daily Devin</a>
+
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left links -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+
+      <!-- Collapsible wrapper -->
     </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
 
-    {{{body}}}
+  {{{body}}}
 
+  <script src="/bootstrap/js/bootstrap.js"></script> 
   </body>
 </html>
-<script src="/js/index.js"></script>
