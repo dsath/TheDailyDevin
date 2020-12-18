@@ -2,16 +2,21 @@
 <div class="row gy-3">
 {{#each .}}
   {{#if id}}
-    <button 
-      class="btn btn-secondary" 
-      type="button"
-      {{!-- onclick="location.href='http://10.0.0.5:8080/posts/{{id}}'"> --}}
-      onclick="location.href='posts/{{id}}'">
-      {{title}}
-    </button>
+
+    <div class="card col-md-3">
+      <img src="{{img_path}}" class="card-img-top" alt="blog-post">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{meta_text}}</p>
+        <a href="#" class="btn btn-primary"
+        onclick="location.href='http://10.0.0.5:8080/posts/{{id}}'">
+        Go to post</a>
+      </div>
+    </div>
+
   {{/if}}
 {{/each}}
 </div>
 </div>
-<div class="bgspan backdrop"></div>
+{{!-- <div class="bgspan backdrop"></div> --}}
 <img class="bgspan" src="assets/workspace_background.jpg">

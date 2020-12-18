@@ -6,6 +6,7 @@ var express = require('express');
 var mariadb = require('mariadb/callback');
 var app = express();
 var fileUpload = require('express-fileupload');
+var bodyParser = require('body-parser');
 var showdown = require('showdown'), converter = new showdown.Converter();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -30,6 +31,10 @@ app.use(express.static('public'));
 app.use('/bootstrap/css', express.static('node_modules/bootstrap/dist/css'));
 app.use('/bootstrap/js', express.static('node_modules/bootstrap/dist/js'));
 app.use(fileUpload());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 
 app.get('/', (req, res) => {
@@ -63,11 +68,14 @@ app.get('/upload_page', (req, res) => {
 });
 
 app.post('/upload', (req, res) => {
-  var file = req.files.filename;
+  var file = req.files.file;
+  var title = req.body.title;
+  var meta_text = req.body.meta_text;
+  var img_path = req.body.img_path;
   var md = file.data.toString('ascii');
   var html = converter.makeHtml(md);
-  var db_query = "INSERT INTO blog_posts (title, markdown, html)" +
-  " VALUES ('test', '" + md + "', '" + html + "')";
+  var db_query = "INSERT INTO blog_posts (title, meta_text, img_path, markdown, html)" +
+  " VALUES ('" + title + "', '" + meta_text + "', '" + img_path + "', '" + md + "', '" + html + "')";
   con.query(db_query, function(err, rows, fields) {
     if (err) throw err;
   });
