@@ -36,12 +36,34 @@
           left: 10%;
           z-index: -1;
         }
+        /* text backdrop */
+
+        /* sticky footer */
+        body {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .dsfooter {
+          margin-top: auto;
+        }
+        /* sticky footer footer */
+        
+        /* button */
+        .dsbutton {
+          position: fixed;
+          top: 50%;
+          left: 45%;
+        }
 
 
         /* font */
-        h1 { color: #d04764; font-family: 'Lobster', cursive; font-size: 36px; font-weight: normal; line-height: 48px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
-        h2 { color: #2CA4B0; font-family: 'Oleo Script', cursive; font-size: 24px; font-weight: normal; line-height: 32px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
-        p { color: #333; font-family: 'Original Surfer', cursive; font-size: 16px; line-height: 28px; margin: 0 0 24px; }
+        div.md-container > h1 { color: #d04764; font-family: 'Lobster', cursive; font-size: 36px; font-weight: normal; line-height: 48px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+        div.md-container > h2 { color: #2CA4B0; font-family: 'Oleo Script', cursive; font-size: 24px; font-weight: normal; line-height: 32px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+        div.md-container > p { color: #333; font-family: 'Original Surfer', cursive; font-size: 16px; line-height: 28px; margin: 0 0 24px; }
+        div.md-container a { color: #d04764; font-family: 'Original Surfer', cursive; }
+        div.md-container a:hover { text-decoration: underline }
         /* font */
       </style>
 
@@ -95,6 +117,15 @@
   <!-- Navbar -->
 
   {{{body}}}
+
+  <footer class="bg-light text-center text-lg-start dsfooter">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright: TheDailyDevin
+    <a class="text-dark" href="https://mdbootstrap.com/">TheDailyDevin.com</a>
+  </div>
+  <!-- Copyright -->
+  </footer>
 
   <script src="/bootstrap/js/bootstrap.js"></script> 
   </body>

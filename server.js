@@ -73,6 +73,7 @@ app.post('/upload', (req, res) => {
   var meta_text = req.body.meta_text;
   var img_path = req.body.img_path;
   var md = file.data.toString('ascii');
+  md = md.replace(/'/g, "\'\'");
   var html = converter.makeHtml(md);
   var db_query = "INSERT INTO blog_posts (title, meta_text, img_path, markdown, html)" +
   " VALUES ('" + title + "', '" + meta_text + "', '" + img_path + "', '" + md + "', '" + html + "')";
