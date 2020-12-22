@@ -1,74 +1,61 @@
-.post-list {
-    display: flex;
-    flex-flow: column wrap;
+
+.post-box {
+  padding: 1rem;
+  text-align: center;
+  background-color: #9c8a89;
 }
 
-.post-list div {
-    height: 50px;
-    background-color: #99ccff;
-    margin: 10px;
-    text-align: center;
-    line-height: 50px;
+/* background image */
+.bgspan {
+/* Set rules to fill background */
+min-height: 100%;
+min-width: 1024px;
+
+/* Set up proportionate scaling */
+width: 100%;
+height: auto;
+
+/* Set up positioning */
+position: fixed;
+top: 0;
+left: 0;
+
+z-index: -2;
 }
 
-.post-list div:hover {
-    background-color: #ddd;
+/* text backdrop */
+.backdrop {
+  background-color: #ebdddd;
+  width: 80%;
+  left: 10%;
+  z-index: -1;
 }
+/* text backdrop */
 
-.post-content {
-    background-color: #99ccff;
-    margin: 10px 50% 0px 10px;
-    padding: 1px 10px 1px 10px;
-}
-
-.post-title {
-    background-color: #99ccff;
-    margin: 10px 50% 10px 10px;
-    padding-left: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
-.about-content {
-    background-color: #99ccff;
-    margin: 20px 50% 0px 10px;
-    padding: 1px 10px 1px 10px;
-}
-
-.header {
-    overflow: hidden;
-    background-color: #3480eb; 
-    padding: 20px 10px
-}
-.header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
-}
-
-.header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.header a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.header-right {
-    float: right;
-} 
-
+/* sticky footer */
 body {
-    background-color: powderblue;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.upload-form input {
-  float: left;
+.dsfooter {
+  margin-top: auto;
 }
+/* sticky footer footer */
+
+/* button */
+.dsbutton {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+}
+
+
+/* font */
+div.md-container h1 { color: #d04764; font-family: 'Lobster', cursive; font-size: 36px; font-weight: normal; line-height: 48px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+div.md-container h2 { color: #2CA4B0; font-family: 'Oleo Script', cursive; font-size: 24px; font-weight: normal; line-height: 32px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; }
+div.md-container p { color: #333; font-family: 'Original Surfer', cursive; font-size: 16px; line-height: 28px; margin: 0 0 24px; }
+div.md-container a { color: #d04764; font-family: 'Original Surfer', cursive; }
+div.md-container a:hover { text-decoration: underline }
+/* font */
